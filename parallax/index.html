@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <style>
+      @keyframes parallax {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-1600px);
+        }
+      }
+
+      body {
+        margin: 0;
+        overflow-x: hidden;
+      }
+
+      .wrapper {
+        position: relative;
+      }
+
+      .cover {
+        position: absolute;
+        background-color: #fff;
+        top: 0;
+        left: 800px;
+        width: 1600px;
+        height: 600px;
+      }
+
+      .background,
+      .first,
+      .second,
+      .third,
+      .fourth,
+      .fifth,
+      .train {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      .first,
+      .second,
+      .third,
+      .fourth,
+      .fifth {
+        animation-name: parallax;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+      }
+
+      .fifth {
+        animation-duration: 30s;
+      }
+
+      .fourth {
+        animation-duration: 12s;
+      }
+
+      .third {
+        animation-duration: 20s;
+      }
+
+      .second {
+        animation-duration: 5s;
+      }
+
+      .first {
+        animation-duration: 1s;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <img src="./background.png" class="background" />
+      <img src="./5th.png" class="fifth" />
+      <img src="./4th.png" class="fourth" />
+      <img src="./3rd.png" class="third" />
+      <img src="./2nd.png" class="second" />
+      <img src="./1st.png" class="first" />
+      <img src="./train.png" class="train" />
+      <div class="cover" />
+    </div>
+  </body>
+</html>

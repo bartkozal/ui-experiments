@@ -1,0 +1,23 @@
+body {
+  background-color: #fff5f5;
+  padding: 96px;
+  font-family: sans-serif;
+}
+
+.floating-card {
+  position: relative;
+  border-radius: 4px;
+  background-color: #c53030;
+  color: #fff5f5;
+  width: 256px;
+  height: 256px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.floating-card:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  z-index: 1;
+}

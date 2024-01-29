@@ -1,0 +1,70 @@
+:root {
+  --card-width: 200px;
+  --card-height: 300px;
+  --card-depth: 16px;
+}
+
+body {
+  font-family: sans-serif;
+  padding: 96px 128px;
+}
+
+.card-front,
+.card-back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-front,
+.card-back,
+.card-flank {
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.card {
+  position: relative;
+  z-index: 2;
+  height: var(--card-height);
+  width: var(--card-width);
+  perspective: calc(var(--card-width) * 1.5);
+}
+
+.card-container {
+  position: absolute;
+  transition: transform 0.7s ease-in-out;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transform: translateZ(calc(var(--card-depth) * -1));
+}
+
+.card-container:hover {
+  transform: translateZ(calc(var(--card-depth) * -1)) rotateX(-180deg);
+}
+
+.card-front {
+  z-index: 1;
+  background-color: #bee3f8;
+  color: #2a4365;
+  border-radius: 4px;
+  transform: translateZ(var(--card-depth));
+}
+
+.card-back {
+  z-index: 0;
+  background-color: #2a4365;
+  color: #ebf8ff;
+  border-radius: 4px;
+  transform: rotateX(180deg) translateZ(var(--card-depth));
+}
+
+.card-flank {
+  height: calc(var(--card-depth) * 2);
+  top: calc(var(--card-depth) * -1);
+  background-color: #90cdf4;
+  transform: rotateX(-90deg);
+}
